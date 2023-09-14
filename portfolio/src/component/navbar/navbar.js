@@ -7,9 +7,7 @@ import Menu from '../../assets/menu.png';
 
 
 const Navbar = () => {
-    const [showMenu, setShowmenu] = useState(false){
-
-    };
+    const [showMenu, setShowmenu] = useState(false)
     return (
         <nav className='navbar'>
             <img src={logo} alt="Logo" className='logo' />
@@ -27,15 +25,15 @@ const Navbar = () => {
             </button>
 
 
-            <img src={Menu} alt="Menu" className='mobmenu' />
-            <div className="navMenu" style={{display: showMenu? 'flex':none}}>
-                <Link activeClass='active' to='intro' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(!showMenu)}>Home</Link>
-                <Link activeClass='active' to='skills' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(!showMenu)}>About</Link>
-                <Link activeClass='active' to='works' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(!showMenu)}>Portfolio</Link>
-                <Link activeClass='active' to='clients' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(!showMenu)}>Clients</Link>
-                <Link activeClass='active' to='contact' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(!showMenu)}>Contact</Link>
+            <img src={Menu} alt="Menu" className='mobmenu' onClick={()=>setShowmenu(!showMenu)}/>
+            <div className="navMenu" style={{display: showMenu? 'flex':'none'}}>
+                <Link activeClass='active' to='intro' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(false)}>Home</Link>
+                <Link activeClass='active' to='skills' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(false)}>About</Link>
+                <Link activeClass='active' to='works' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(false)}>Portfolio</Link>
+                <Link activeClass='active' to='clients' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(false)}>Clients</Link>
+                <Link activeClass='active' to='contact' spy={true} smooth={true} offset={-50} duration={500}  className="listItem" onClick={()=>setShowmenu(false)}>Contact</Link>
             </div>
-        </nav>}
+        </nav>
     )
 }
 
